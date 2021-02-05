@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.10/swiper-bundle.min.css" />
+	<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+font-size:16px;
+font-weight: 300;
+outline: none;
+}
+		body{
+			margin: 0;
+			padding: 0;
+			background: #FFF;
+			color:#000;
+		}
+		a{
+			text-decoration: none;
+			color:#000;
+		}
+		div#header > div, div#actual-area > div{
+			width:1000px;
+			margin:0px auto;
+		}
+		/*div#actual-area{
+			background: red;
+		}*/
+		div.top-slider {
+		    box-shadow: 11px 9px 30px -20px black;
+		    overflow: hidden;
+		    background: #FFF;
+		    padding: 20px;
+		    border-radius: 20px;
+		}
+		div#header {
+			height: 365px;
+background-image: -webkit-linear-gradient(0deg, #88f3ff 0%, #5e58b9  100%);
+		    padding: 15px 0px 0px 0px;
+		    /*border-bottom: 1px solid #e6e6e6;*/
+		}
+		div#header > div > div:nth-of-type(1), div#header > div > div:nth-of-type(2){
+			display: inline-block;
+			vertical-align: top;
+		}
+		div#header > div > div:nth-of-type(1) {
+    		color: #464646;
+		    font-family: 'Raleway', sans-serif;
+		    font-size: 40px;
+		    font-weight: 100;
+		    width: fit-content;
+		    line-height: 1.5;
+		}
+		div#header > div > div:nth-of-type(2) {
+		    width: 730px;
+		    text-align: right;
+		    padding-top: 17px;
+		}
+		div#header > div > div:nth-of-type(2) > nav > a {
+		    font-size: 18px;
+		    font-family: 'Raleway', sans-serif;
+		    font-weight: 300;
+		    display: inline-block;
+		    color: #FFF;
+		    margin: 0px 8px;
+		}
+		div#content{
+			width:1000px;
+			margin: 120px auto 30px auto;
+		}
+		div#content > div:nth-of-type(1), div#content > div:nth-of-type(2){
+			display: inline-block;
+			vertical-align: top;
+		}
+		div#content > div:nth-of-type(1){
+			width: 750px;
+    		margin-right: 20px;
+		}
+		div#content > div:nth-of-type(2){
+			width: 230px;
+		}
+		div.sidebar-area {
+		    margin: 35px 0px 0px 0px;
+		}
+		div.sidebar-area > div:nth-of-type(1){
+		    font-size: 18px;
+		    font-weight: 500;
+		    border-left: 5px solid #0072ff;
+		    padding: 0px 0px 0px 10px;
+		    background: #e8e8e8;
+		    padding: 7px 10px;
+		    margin: 35px 0px 15px 0px;
+		}
+		div.sidebar-menu > div:nth-of-type(2) > div{
+		    border-bottom: 1px dashed #e4e4e4;
+		    padding: 6px 10px;
+    	}
+		div.sidebar-menu > div:nth-of-type(2) > div:nth-last-of-type(1){
+			border:none;
+		}
+		div.sidebar-menu > div:nth-of-type(2) > div > a{
+			font-size:16px;
+		}
+		div.search-area > input, div.search-area > div{
+			padding:8px 10px;
+			display: inline-block;
+			vertical-align: top;
+		}
+		div.search-area > input[type=text]{
+    background: #c1e0ff;
+    border: none;
+    /* display: inline-block; */
+    color: #FFF;
+    width: 190px;
+    border-radius: 10px 0px 0px 10px;
+		}
+		div.search-area > div{
+cursor: pointer;
+    background: #5b6f88;
+    color: #FFF;
+    border: none;
+    width: 40px;
+    border-radius: 0px 10px 10px 0px;
+		}
+div.sidebar-lasttopics > div:nth-of-type(2) > a {
+    display: flex;
+    border-bottom: 1px dashed #e4e4e4;
+    align-items: center;
+    padding: 6px 10px;
+}
+div.sidebar-lasttopics > div:nth-of-type(2) > a > div:nth-of-type(1) {
+    width: 50px;
+    border-radius: 8px;
+    /* border: 1px solid #7fd1f0; */
+    height: 50px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    display: inline-block;
+}
+div.sidebar-lasttopics > div:nth-of-type(2) > a > div:nth-of-type(2) {
+    display: inline-block;
+    width: calc(100% - 60px);
+    vertical-align: text-top;
+    font-size: 14px;
+    margin-left: 10px;
+    text-align: left;
+}
+div.post{
+    margin: 40px 0px;
+}
+div.post:nth-child(1){
+    margin:0px;
+}
+		div.post div.post-img {
+    overflow: hidden;
+    border-radius: 20px;
+    width: 170px;
+    margin: 20px 20px 0px 0px;
+}
+
+div.post div.post-img > div{
+	-webkit-transition: transform 1s ease;
+    width: 170px;
+    height: 170px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+div.post div.post-img:hover > div{
+	transform: scale(1.2) rotate(4deg);;
+}
+div.post h1.post-heading {
+    margin: 0;
+    padding: 0;
+    font-size: 23px;
+    font-weight: 600;
+    /* line-height: 1; */
+}
+div.post-content, div.post-img {
+    display: inline-block;
+    vertical-align: top;
+}
+div.post-content{
+	width: calc(100% - 190px);
+}
+div.post-details > p {
+	display:inline-block;
+    margin: 0px 8px;
+}
+div.post-details > p:nth-of-type(1){
+	margin-left:0px;
+}
+div.post-details > p:nth-last-of-type(1){
+	margin-right:0px;
+}
+
+div.post p.post-date, div.post p.post-category, div.post p.post-comment-count, div.post p.post-editor, div.post i{
+	font-size:12px;
+}
+div.post div.post-description{
+	    text-align: justify;
+}
+div.post div.post-continue-button{
+	    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    background: #e8e8e8;
+    margin-top: 10px;
+    font-weight: 400;
+}
+div.pagination{
+	text-align: center;
+}
+div.pagination > a {
+    background: #e8e8e8;
+    padding: 7px 0px;
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    margin:0px 2px;
+}
+div.pagination > a:nth-last-child(2) {
+    background: #5283b5;
+    color: #FFF;
+}
+div.pagination > a:nth-last-child(1) {
+    background: #7a92ab;
+    color: #FFF;
+}
+div.pagination > a:nth-child(2) {
+    background: #5283b5;
+    color: #FFF;
+}
+div.pagination > a:nth-child(1) {
+    background: #7a92ab;
+    color: #FFF;
+}
+
+
+div#footer {
+    background: #f9f9f9;
+    border-top: 1px solid #e6e6e6;
+    text-align: center;
+    padding: 15px 0px;
+}
+div#footer > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    text-align: left;
+}
+div#footer span{
+	display:block;
+}
+div#footer nav > a{
+	display:block;
+}
+div#footer div.minimal-logo > img, div#footer div.minimal-logo > span{
+	display: inline-block;
+	vertical-align: top;
+}
+div#footer div.footer-title {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    margin: 0px 0px 15px 0px;
+}
+div#actual-area{
+	    position: relative;
+    bottom: -55px;
+}
+
+
+    .swiper-container {
+      width: 100%;
+      height: 220px;
+    }
+
+    /*.swiper-slide {
+    	position: relative;
+    }*/
+
+    .swiper-pagination-bullet {
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      font-size: 12px;
+      color: #000;
+      opacity: 1;
+      border-radius: 0px;
+      background: rgb(232 232 232);
+    }
+
+    .swiper-pagination-bullet-active {
+      color: #fff;
+      background: #007aff;
+    }
+
+div#footer a.footer-social-button {
+    background: #e0e0e0;
+    padding: 7px 0px;
+    display: inline-block;
+    color: #675757;
+    width: 40px;
+    text-align: center;
+    margin: 0px 5px;
+}
+div.actual-slide-item{
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+div.actual-slide-item > div > h1 {
+	padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFF;
+    text-shadow: 2px 2px 3px #000;
+}
+div.actual-slide-item > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(255 255 255 / 0%)10%, rgb(0 0 0 / 80%) 60%);
+}
+div.actual-slide-item > div > span {
+	font-size: 13px;
+	font-weight: 400;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #FFF;
+    padding: 10px 10px 20px 10px;
+}
+.swiper-pagination{
+	text-align: left;
+    bottom: -5px !important;
+}
+.swiper-slide{
+	width:45%;
+}
+
+	</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.10/swiper-bundle.min.js"></script>
+
+<title>Test</title>
+</head>
+<body>
+	<div id="header">
+		<div>
+			<div>SyntaxBender</div>
+			<div>
+				<nav>
+					<a href="#">Anasayfa</a>
+					<a href="#">Portfolio</a>
+					<a href="#">References</a>
+				</nav>
+			</div>
+			<div id="actual-area">
+				<div id="popular" class="top-slider">
+					<span style="font-size: 23px;font-weight: 600;">En çok okunan yazılar</span>
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="actual-slide-item" style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');">
+									<div>
+										<h1>Burada bişiler var olacak inanıyom</h1>
+										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</span>
+									</div>
+								</div>
+							</div><div class="swiper-slide">
+								<div class="actual-slide-item" style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');">
+									<div>
+										<h1>Burada bişiler var olacak inanıyom</h1>
+										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</span>
+									</div>
+								</div>
+							</div><div class="swiper-slide">
+								<div class="actual-slide-item" style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');">
+									<div>
+										<h1>Burada bişiler var olacak inanıyom</h1>
+										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</span>
+									</div>
+								</div>
+							</div><div class="swiper-slide">
+								<div class="actual-slide-item" style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');">
+									<div>
+										<h1>Burada bişiler var olacak inanıyom</h1>
+										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</span>
+									</div>
+								</div>
+							</div><div class="swiper-slide">
+								<div class="actual-slide-item" style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');">
+									<div>
+										<h1>Burada bişiler var olacak inanıyom</h1>
+										<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="content">
+		<div>
+			<div class="post">
+				<div class="post-img">
+					<div style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');"></div>
+				</div><div class="post-content">
+					<h1 class="post-heading">Linux'ta User Privileges</h1>
+					<div class="post-details">
+						<p class="post-date"><i class="fas fa-calendar-alt"></i> 29 Aralık 2020
+						</p><p class="post-category"><i class="fas fa-list"></i> Linux
+						</p><p class="post-comment-count"><i class="fas fa-comments"></i> 2 Yorum
+						</p><p class="post-editor"> <i class="fas fa-user"></i> Admin
+						</p>
+					</div>
+					<div class="post-description">
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+					</div>
+					<div class="post-continue-button"><div>Devamı</div></div>
+				</div>
+			</div>
+			<div class="post">
+				<div class="post-img">
+					<div style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');"></div>
+				</div><div class="post-content">
+					<h1 class="post-heading">Linux'ta User Privileges</h1>
+					<div class="post-details">
+						<p class="post-date"><i class="fas fa-calendar-alt"></i> 29 Aralık 2020
+						</p><p class="post-category"><i class="fas fa-list"></i> Linux
+						</p><p class="post-comment-count"><i class="fas fa-comments"></i> 2 Yorum
+						</p><p class="post-editor"> <i class="fas fa-user"></i> Admin
+						</p>
+					</div>
+					<div class="post-description">
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+					</div>
+					<div class="post-continue-button"><div>Devamı</div></div>
+				</div>
+			</div>
+			<div class="post">
+				<div class="post-img">
+					<div style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');"></div>
+				</div><div class="post-content">
+					<h1 class="post-heading">Linux'ta User Privileges</h1>
+					<div class="post-details">
+						<p class="post-date"><i class="fas fa-calendar-alt"></i> 29 Aralık 2020
+						</p><p class="post-category"><i class="fas fa-list"></i> Linux
+						</p><p class="post-comment-count"><i class="fas fa-comments"></i> 2 Yorum
+						</p><p class="post-editor"> <i class="fas fa-user"></i> Admin
+						</p>
+					</div>
+					<div class="post-description">
+						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum software like Aldus PageMaker including versions of Lorem Ipsum.
+					</div>
+					<div class="post-continue-button"><div>Devamı</div></div>
+				</div>
+			</div>
+			<div class="pagination">
+				<a href="#"><i class="fas fa-angle-double-left"></i></a><a href="#"><i class="fas fa-angle-left"></i></a><a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#"><i class="fas fa-angle-right"></i></a><a href="#"><i class="fas fa-angle-double-right"></i></a>
+			</div>
+		</div><div>
+			<div class="search-area"><input placeholder="Search" type="text" id="searchinput"><div id="searchbutton"><i class="fas fa-search"></i></div></div>
+			<div class="sidebar-area sidebar-menu">
+				<div>Kategoriler</div>
+				<div>
+					<div><a href="#">PHP</a></div>
+					<div><a href="#">CSS</a></div>
+					<div><a href="#">Javascript</a></div>
+					<div><a href="#">HTML</a></div>
+				</div>
+			</div>
+			<div class="sidebar-area sidebar-lasttopics">
+				<div>Son yazılar</div>
+				<div>
+					<a href="#"><div style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');"></div><div>Linux'ta User Privileges</div></a>
+					<a href="#"><div style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');"></div><div>Burada bişiler var olacak inanıyom</div></a>
+					<a href="#"><div style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');"></div><div>Build Your Own Email Server on Ubuntu: Basic Postfix Setup</div></a>
+					<a href="#"><div style="background: url('https://www.linuxbabe.com/wp-content/uploads/2020/12/ProtonVPN-on-Desktop-Linux-389x219.jpg');"></div><div>How to Create a Linux VPS Server on ScalaHosting</div></a>
+				</div>
+			</div>
+			<div class="my-profile">
+			</div>
+			<div class="sidebar-area sidebar-menu">
+				<div>Son Yazılar</div>
+				<div>
+					<div><a href="#">PHP</a></div>
+					<div><a href="#">CSS</a></div>
+					<div><a href="#">Javascript</a></div>
+					<div><a href="#">HTML</a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div >
+			<div class="footer-title">İletişim</div>
+			<div class="minimal-logo">
+				<img src="app/template/images/logo/logo.png">
+				<span>SyntaxBender</span>
+			</div>
+			<span><i class="fa fa-envelope" aria-hidden="true"></i> mail@syntaxbender.com</span>
+			<span><i class="fa fa-envelope" aria-hidden="true"></i> hasanozer@ieee.org</span>
+
+		</div>
+		<div>
+			<div class="footer-title">Sözleşmeler</div>
+			<span>Veri Güvenliği</span>
+			<span>Kullanıcı Sözleşmesi</span>
+			<span>Gizlilik Sözleşmes</span>
+		</div>
+		<div>
+			<div class="footer-title">Bağlantılar</div>
+			<nav>
+				<a href="#">Proje Hakkında</a>
+				<a href="#">Ekibimiz</a>
+				<a href="#">Mobil Uygulama</a>
+				<a href="#">Basında Çorlu Koder</a>
+				<a href="#">İletişim</a>
+			</nav>
+		</div>
+		<div>
+			<div class="footer-title">Sosyal Medya</div>
+			<a class="footer-social-button" href="#"><i class="fab fa-github"></i></a><a class="footer-social-button" href="#"><i class="fab fa-instagram"></i></a><a class="footer-social-button" href="#"><i class="fab fa-linkedin-in"></i></a>
+		</div>
+	</div>
+</body>
+</html>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+	  slidesPerView: 'auto',
+	  spaceBetween: 15,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      },
+    });
+  </script>
