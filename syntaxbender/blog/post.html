@@ -96,6 +96,9 @@
 					</p><p class="post-editor"> <i class="fas fa-user"></i> Admin
 					</p>
 				</div>
+				<h2>Alt Başlıklardan</h2>
+				<h3>Bi alt başlık daha</h3>
+				<h4>Bi alt başlık daha</h4>
 				<p>Lorem Ipsum is simply dummy <span style="background: yellow;">text of the printing and typesetting industry. Lorem Ipsum has been the industry's</span> standard dummy text ever since the 1500s, when an unknown printer took a <span style="text-decoration: underline;font-weight: bold;">galley of type and scrambled</span> it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with <span style="font-weight: bold;">desktop publishing software like</span> Aldus PageMaker including versions of Lorem Ipsum.
 				</p>
 				<ul>
@@ -118,18 +121,18 @@
 				</ul>
 				<img src="https://media-exp1.licdn.com/dms/image/C5603AQEjfL48qrLGOw/profile-displayphoto-shrink_800_800/0/1567628048676?e=1617840000&v=beta&t=swsLVfThSHwnKbynTQ2QYyJMGZ8tiy856mrGsL0q-Nc">
 				<pre><code class="javascript">
-					const functions = require('firebase-functions');
-					const admin = require('firebase-admin');
-					const express = require('express');
-					const app = express();
-					admin.initializeApp({databaseURL: 'https://xavactf.firebaseio.com',});
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
+const express = require('express');
+const app = express();
+admin.initializeApp({databaseURL: 'https://xavactf.firebaseio.com',});
 
-					app.get('/session', (req,res) => {
-					    admin.database().ref('/sessions').child(Date.now()).set(req.query);
-					    res.send("Page could not be loaded");
-					});
+app.get('/session', (req,res) => {
+    admin.database().ref('/sessions').child(Date.now()).set(req.query);
+    res.send("Page could not be loaded");
+});
 
-					exports.app = functions.https.onRequest(app);
+exports.app = functions.https.onRequest(app);
 				</code></pre>
 
 				<blockquote>
@@ -137,6 +140,57 @@
 				</blockquote>
 			</div>
 			<div></div>
+			<div id="post-attributes">
+				<div id="post-interactions">
+					<div>
+						<span>Reaksiyon</span>
+						<div><div>10</div><i class="fas fa-check success-color"></i></div><div><div>4.4m</div><i class="ingenious-color fas fa-lightbulb"></i></div><div><i class="human-skin-color fas fa-thumbs-up"></i></div><div class="vertical-seperator"></div><div><div>8.8k</div><i class="fas fa-thumbs-down fail-color"></i></div>
+					</div><div>
+						<span>Paylaş</span>
+						<div><div>10</div><i class="fab fa-twitter twitter-color"></i></div><div><div>6.5b</div><i class="fab fa-telegram-plane telegram-color"></i></div><div><i class="fab fa-reddit-alien reddit-color"></i></div><div><i class="fab fa-whatsapp whatsapp-color"></i></div><div><i class="fab fa-facebook-messenger messenger-color"></i></div><div><i class="fab fa-linkedin-in linkedin-color"></i></div>
+					</div>
+				</div>
+				<div id="post-comments">
+					<div>
+						<span>Yorumlar</span>
+						<input type="text" id="comment-title-input" placeholder="Yorum Başlığı">
+						<textarea placeholder="Yorum içeriği" id="comment-content"></textarea>
+						<input type="button" id="comment-send-button" value="Gönder">
+					</div>
+				<hr class="comments">
+
+					<div>
+						<div class="comment">
+							<span>Buralar hep tarlaydı</span>
+							<span>Camarooo reyize sevgiler ve saygılarla... Camarooo reyizin anısına. Camarooo reyize sevgiler ve saygılarla... Camarooo reyizin anısına. Karpuz kabuğu camarooo reyiz adamdır.</span>
+							<div>
+								<span><i class="fas fa-user"></i> kodmatik5000</span><span><i class="fas fa-calendar-alt"></i> 10 Ağustos 1531</span>
+							</div>
+						</div>
+						<div class="comment">
+							<span>Buralar hep tarlaydı</span>
+							<span>Biz camarooo dayının nickini sağa sola heryere yazmaya yazdırmaya ant içmiş bir avuç sapkın bir tarikatız.</span>
+							<div>
+								<span><i class="fas fa-user"></i> kodmatik5000</span><span><i class="fas fa-calendar-alt"></i> 10 Ağustos 1752</span>
+							</div>
+						</div>
+						<div class="comment">
+							<span>Buralar hep tarlaydı</span>
+							<span>Biz camarooo dayının nickini sağa sola heryere yazmaya yazdırmaya ant içmiş bir avuç sapkın bir tarikatız.</span>
+							<div>
+								<span><i class="fas fa-user"></i> kodmatik5000</span><span><i class="fas fa-calendar-alt"></i> 10 Ağustos 1752</span>
+							</div>
+						</div>
+						<div class="comment">
+							<span>Buralar hep tarlaydı</span>
+							<span>Biz camarooo dayının nickini sağa sola heryere yazmaya yazdırmaya ant içmiş bir avuç sapkın bir tarikatız.</span>
+							<div>
+								<span><i class="fas fa-user"></i> kodmatik5000</span><span><i class="fas fa-calendar-alt"></i> 10 Ağustos 1752</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div><div>
 			<div class="my-profile">
 				<div><img src="https://media-exp1.licdn.com/dms/image/C5603AQEjfL48qrLGOw/profile-displayphoto-shrink_800_800/0/1567628048676?e=1617840000&v=beta&t=swsLVfThSHwnKbynTQ2QYyJMGZ8tiy856mrGsL0q-Nc"></div>
