@@ -1,1 +1,1 @@
-# sirgeny-blog-template
+# blog-template
